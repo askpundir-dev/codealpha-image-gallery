@@ -20,6 +20,8 @@
     --text-3xl--line-height: calc(2.25 / 1.875);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
+    --font-weight-extralight: 200;
+    --font-weight-light: 300;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --drop-shadow-md: 0 3px 3px rgb(0 0 0 / 0.12);
@@ -188,6 +190,15 @@
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
+  .inset-4 {
+    inset: calc(var(--spacing) * 4);
+  }
+  .inset-x-0 {
+    inset-inline: calc(var(--spacing) * 0);
+  }
+  .inset-x-4 {
+    inset-inline: calc(var(--spacing) * 4);
+  }
   .-z-10 {
     z-index: calc(10 * -1);
   }
@@ -245,6 +256,9 @@
   .h-screen {
     height: 100vh;
   }
+  .max-h-full {
+    max-height: 100%;
+  }
   .min-h-screen {
     min-height: 100vh;
   }
@@ -259,6 +273,9 @@
   }
   .w-full {
     width: 100%;
+  }
+  .max-w-full {
+    max-width: 100%;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -306,6 +323,21 @@
   .object-scale-down {
     object-fit: scale-down;
   }
+  .object-bottom {
+    object-position: bottom;
+  }
+  .object-center {
+    object-position: center;
+  }
+  .object-top {
+    object-position: top;
+  }
+  .object-top-left {
+    object-position: left top;
+  }
+  .object-top-right {
+    object-position: right top;
+  }
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
@@ -314,6 +346,30 @@
   }
   .text-center {
     text-align: center;
+  }
+  .font-\[\"kawoon\"\,\"serif\"\] {
+    font-family: "kawoon","serif";
+  }
+  .font-\[\"kawoon\"\,serif\] {
+    font-family: "kawoon",serif;
+  }
+  .font-\[\"kawoon\,serif\"\] {
+    font-family: "kawoon,serif";
+  }
+  .font-\[ka\] {
+    font-family: ka;
+  }
+  .font-\[kavoon\,serif\] {
+    font-family: kavoon,serif;
+  }
+  .font-\[kawoon\,\] {
+    font-family: kawoon,;
+  }
+  .font-\[kawoon\,serif\] {
+    font-family: kawoon,serif;
+  }
+  .font-\[kawoon\] {
+    font-family: kawoon;
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -335,6 +391,14 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .font-extralight {
+    --tw-font-weight: var(--font-weight-extralight);
+    font-weight: var(--font-weight-extralight);
+  }
+  .font-light {
+    --tw-font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight-light);
+  }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
@@ -351,9 +415,36 @@
   .underline {
     text-decoration-line: underline;
   }
+  .opacity-0 {
+    opacity: 0%;
+  }
+  .opacity-\[0\.1\] {
+    opacity: 0.1;
+  }
+  .opacity-\[0\.4\] {
+    opacity: 0.4;
+  }
+  .opacity-\[0\.9\] {
+    opacity: 0.9;
+  }
+  .opacity-\[0\.42\] {
+    opacity: 0.42;
+  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .brightness-0 {
+    --tw-brightness: brightness(0%);
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .brightness-\[0\.7\] {
+    --tw-brightness: brightness(0.7);
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .brightness-\[0\] {
+    --tw-brightness: brightness(0);
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
   .drop-shadow-lg {
     --tw-drop-shadow-size: drop-shadow(0 4px 4px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.15)));
@@ -382,6 +473,26 @@
       @media (hover: hover) {
         background-color: var(--color-gray-200);
       }
+    }
+  }
+  .md\:h-full {
+    @media (width >= 48rem) {
+      height: 100%;
+    }
+  }
+  .md\:w-full {
+    @media (width >= 48rem) {
+      width: 100%;
+    }
+  }
+  .md\:object-cover {
+    @media (width >= 48rem) {
+      object-fit: cover;
+    }
+  }
+  .md\:object-top {
+    @media (width >= 48rem) {
+      object-position: top;
     }
   }
 }
