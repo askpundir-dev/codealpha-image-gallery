@@ -6,7 +6,33 @@
     <link rel="stylesheet" href="output.css" />
     <title>Image-Gallery</title>
   </head>
-  <body>
-    <h1>Image-Gallery</h1>
+  <body
+    class="relative min-h-screen flex items-center justify-center overflow-hidden text-white"
+  >
+    <!-- Background image -->
+    <img
+      src="public/opening-page-image/opening-page-bg-image.jpg"
+      alt="Background"
+      class="absolute inset-0 w-full h-full object-cover -z-10"
+    />
+
+    <!-- Optional dark overlay -->
+    <div class="absolute inset-0 bg-black/40 -z-10"></div>
+
+    <!-- Main content -->
+    <main class="text-center">
+      <h1 class="text-3xl font-bold mb-4 drop-shadow-lg">
+        Welcome to the Gallery
+      </h1>
+      <p class="text-xl mb-6 drop-shadow-md">
+        "Every picture tells a story, every story deserves a frame."
+      </p>
+      <button
+        onclick="enterGallery()"
+        class="bg-white text-gray-900 font-semibold px-8 py-3 rounded-full hover:bg-gray-200 transition-all duration-300"
+      >
+        Enter Gallery
+      </button>
+    </main>
   </body>
 </html>
