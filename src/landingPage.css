@@ -1,5 +1,13 @@
+/* body {
+  background-color: #000;
+} */
 button {
   cursor: pointer;
+}
+
+.image-container {
+  background: url("public/opening-page-image/opening-page-bg-image1.jpg")
+    center/cover no-repeat;
 }
 
 .landing-page-image {
