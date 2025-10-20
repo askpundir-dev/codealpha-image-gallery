@@ -92,7 +92,7 @@
         },
         {
           src: "public/opening-page-image/opening-page-bg-image10.jpg",
-          alt: "foggy weather beautiful tree",
+          alt: "foggy weather, beautiful tree",
         },
         {
           src: "public/opening-page-image/opening-page-bg-image11.jpg",
@@ -111,17 +111,17 @@
         const elImage = document.createElement("img");
         elImage.src = image.src;
         elImage.alt = image.alt;
-        elImage.className =
-          "h-full w-full object-cover absolute inset-0 -z-10 opacity-0 transition-opacity duration-1000";
-        if (i === 0) elImage.classList.add("opacity-1"); // show first image initially
+        elImage.className = "landing-page-image";
+        elImage.loading = "lazy";
+        if (i === 0) {
+          elImage.style.opacity = 1;
+          elImage.loading = "eager";
+        }
         imageContainer.appendChild(elImage);
       });
 
       let currentIndex = 0;
       const images = document.querySelectorAll(".image-container img");
-
-      // hide all initially except first
-      images.forEach((img, i) => (img.style.opacity = i === 0 ? 1 : 0));
 
       setInterval(() => {
         images[currentIndex].style.opacity = 0;
