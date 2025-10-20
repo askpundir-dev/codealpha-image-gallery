@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="preload"
+      as="image"
+      href="public/opening-page-image/opening-page-bg-image1.jpg"
+      fetchpriority="high"
+    />
+
     <link rel="tab icon" href="public/tab-image.png" type="image/x-icon" />
 
     <!--this link imports a font called as Overlock and Kavoon from google fonts -->
@@ -21,13 +29,7 @@
     class="relative min-h-screen flex items-center justify-center overflow-hidden text-white"
   >
     <!-- Background image -->
-    <div class="image-container absolute inset-0 w-full h-full -z-10">
-      <img
-        src="public/opening-page-image/opening-page-bg-image1.jpg"
-        alt="Background"
-        class="h-full w-full object-cover md:object-top"
-      />
-    </div>
+    <div class="image-container absolute inset-0 w-full h-full -z-10"></div>
 
     <!-- dark overlay -->
     <div class="absolute inset-0 bg-black/40 -z-10"></div>
@@ -48,5 +50,84 @@
         Enter Gallery
       </button>
     </main>
+
+    <script>
+      const imageContainer = document.querySelector(".image-container");
+      const imagesArray = [
+        {
+          src: "public/opening-page-image/opening-page-bg-image1.jpg",
+          alt: "nature mountain",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image2.jpg",
+          alt: "forest nature",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image3.jpg",
+          alt: "nature sunset river",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image4.jpg",
+          alt: "night sky, stars",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image5.jpg",
+          alt: "forest, bridge",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image6.jpg",
+          alt: "forest, lake, nature",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image7.jpg",
+          alt: "beautiful scenery",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image8.jpg",
+          alt: "forest, bridge",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image9.jpg",
+          alt: "nature, flowers, mountain",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image10.jpg",
+          alt: "foggy weather beautiful tree",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image11.jpg",
+          alt: "lake, mountains",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image12.jpg",
+          alt: "beautiful scenery of nature",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image13.jpg",
+          alt: "beautiful scenery of nature",
+        },
+      ];
+      imagesArray.forEach((image, i) => {
+        const elImage = document.createElement("img");
+        elImage.src = image.src;
+        elImage.alt = image.alt;
+        elImage.className =
+          "h-full w-full object-cover absolute inset-0 -z-10 opacity-0 transition-opacity duration-1000";
+        if (i === 0) elImage.classList.add("opacity-1"); // show first image initially
+        imageContainer.appendChild(elImage);
+      });
+
+      let currentIndex = 0;
+      const images = document.querySelectorAll(".image-container img");
+
+      // hide all initially except first
+      images.forEach((img, i) => (img.style.opacity = i === 0 ? 1 : 0));
+
+      setInterval(() => {
+        images[currentIndex].style.opacity = 0;
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].style.opacity = 1;
+      }, 4000);
+    </script>
   </body>
 </html>
