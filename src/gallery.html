@@ -23,115 +23,505 @@
         <h1>Gallery</h1>
       </a>
     </header>
-    <aside class="tabs-container">
-      <strong>All</strong>
-      <strong>Scenery</strong>
-      <strong>Cars</strong>
-      <strong>Mountains</strong>
-    </aside>
-    <main class="gallery-grid">
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
+    <ul class="tabs-container">
+      <li>All</li>
+      <li>Scenery</li>
+      <li>Cars</li>
+      <li>Mountains</li>
+    </ul>
+    <main class="gallery-grid"></main>
+
+    <button title="scroll to top" class="scroll-back-to-top">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 4L11.2929 3.29289L12 2.58579L12.7071 3.29289L12 4ZM13 19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19L13 19ZM5.29289 9.29289L11.2929 3.29289L12.7071 4.70711L6.70711 10.7071L5.29289 9.29289ZM12.7071 3.29289L18.7071 9.29289L17.2929 10.7071L11.2929 4.70711L12.7071 3.29289ZM13 4L13 19L11 19L11 4L13 4Z"
+          fill="#CCD2E3"
         />
-      </div>
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
-        />
-      </div>
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
-        />
-      </div>
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
-        />
-      </div>
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
-        />
-      </div>
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
-        />
-      </div>
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
-        />
-      </div>
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
-        />
-      </div>
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
-        />
-      </div>
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
-        />
-      </div>
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
-        />
-      </div>
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
-        />
-      </div>
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
-        />
-      </div>
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
-        />
-      </div>
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
-        />
-      </div>
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
-        />
-      </div>
-      <div class="image-container">
-        <img
-          src="public/opening-page-image/opening-page-bg-image11.jpg"
-          alt=""
-        />
-      </div>
-    </main>
+      </svg>
+    </button>
+
+    <script>
+      const galleryGrid = document.querySelector(".gallery-grid");
+      console.log([galleryGrid]);
+      const galleryImages = [
+        {
+          src: "public/gallery-images/gallery-images40.avif",
+          alt: "white sports car",
+          keywords: ["car", "white", "sports", "racing"],
+          type: "car",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image1.jpg",
+          alt: "nature mountain",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image2.jpg",
+          alt: "forest nature",
+          keywords: [],
+
+          type: "nature",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image3.jpg",
+          alt: "nature sunset river",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image4.jpg",
+          alt: "night sky, stars",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image5.jpg",
+          alt: "forest, bridge",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image6.jpg",
+          alt: "forest, lake, nature",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image7.jpg",
+          alt: "beautiful scenery",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image8.jpg",
+          alt: "forest, bridge",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image9.jpg",
+          alt: "nature, flowers, mountain",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image10.jpg",
+          alt: "foggy weather, beautiful tree",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image11.jpg",
+          alt: "lake, mountains",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/opening-page-image/opening-page-bg-image12.jpg",
+          alt: "beautiful scenery of nature",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images1.avif",
+          alt: "nice looking leaves",
+          keywords: ["leaves", "green", "nature"],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images2.avif",
+          alt: "bouquet of roses",
+          keywords: ["roses", "nature", "bouquet"],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images3.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images4.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images5.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images6.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images7.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images8.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images9.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images10.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images11.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images12.webp",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images13.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images14.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images15.webp",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images16.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images17.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images18.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images19.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images20.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images21.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images22.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images23.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images24.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images25.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images26.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images27.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images28.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images29.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images30.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images31.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images32.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images33.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images32.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images35.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images36.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images37.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images38.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images39.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images41.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images42.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images43.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images44.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images45.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images46.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images47.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images48.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images49.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images50.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images51.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images52.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images53.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images54.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images55.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images56.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images57.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images58.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images59.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images60.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+        {
+          src: "public/gallery-images/gallery-images61.avif",
+          alt: "",
+          keywords: [],
+          type: "nature",
+        },
+      ];
+
+      galleryImages.forEach((image) => {
+        const imageContainer = document.createElement("div");
+        imageContainer.className = "image-container";
+        const imageElem = document.createElement("img");
+        imageElem.alt = image.alt;
+        imageElem.src = image.src;
+        imageElem.loading = "lazy";
+
+        imageContainer.appendChild(imageElem);
+        galleryGrid.appendChild(imageContainer);
+      });
+
+      //full scroll back to top logic 🔥
+      const scrollBtn = document.querySelector(".scroll-back-to-top");
+      let lastScrollTime = 0;
+
+      window.addEventListener("scroll", () => {
+        const now = Date.now();
+        if (now - lastScrollTime < 100) return; // throttle to every 100ms
+        lastScrollTime = now;
+
+        const shouldShow = window.scrollY > 200;
+        scrollBtn.classList.toggle("scroll-top-active", shouldShow);
+      });
+
+      scrollBtn.onclick = () => {
+        scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      };
+    </script>
   </body>
 </html>
