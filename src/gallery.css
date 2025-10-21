@@ -3,12 +3,11 @@
 } */
 
 .header {
-  min-height: 60px;
-  max-height: 10vh;
+  min-height: 40px;
+  max-height: 6vh;
   display: flex;
   /* justify-content: center; */
   align-items: center;
-  margin-bottom: 20px;
   background: linear-gradient(120deg, #2b5876, #4e4376);
 }
 
@@ -54,3 +53,24 @@
     grid-template-columns: repeat(4, 1fr);
   }
 } */
+
+.tabs-container {
+  font-size: large;
+  gap: 2rem;
+  padding: 4px 25px;
+  display: flex;
+  /* border:2px solid black; */
+  position: sticky;
+  top: 0;
+  font-family: overlock, sans-serif;
+  background: linear-gradient(225deg, #e66465, #9198e5);
+}
+
+.tabs-container strong {
+  border-radius: 3px;
+  padding: 0 7px;
+  transition: all 300ms ease-in-out;
+}
+.tabs-container strong:hover {
+  background: linear-gradient(60deg, #ff9a9e, #fad0c4);
+}
