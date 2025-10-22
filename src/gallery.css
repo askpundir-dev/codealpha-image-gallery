@@ -113,7 +113,7 @@ body {
   }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 1500px) {
   .gallery-grid {
     column-count: 4;
   }
