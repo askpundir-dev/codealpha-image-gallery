@@ -101,13 +101,20 @@ galleryGrid.addEventListener("click", (e) => {
   // Create navigation buttons
   const prevBtn = document.createElement("button");
   prevBtn.classList.add("nav-btn", "prev-btn");
-  prevBtn.textContent = "←";
+  prevBtn.innerHTML = "<span>←</span>";
 
   const nextBtn = document.createElement("button");
   nextBtn.classList.add("nav-btn", "next-btn");
-  nextBtn.textContent = "→";
+  nextBtn.innerHTML = "<span>→</span>";
 
+  //close button 
+  const closeFullViewButton=document.createElement("button");
+  closeFullViewButton.classList.add("close-full-view-button");
+  closeFullViewButton.innerHTML="<span>X</span>";
+  
+  closeFullViewButton.onclick=()=>imageBackground.remove();
   // Append everything
+  imageContainer.appendChild(closeFullViewButton);
   imageContainer.appendChild(prevBtn);
   imageContainer.appendChild(imageElem);
   imageContainer.appendChild(nextBtn);

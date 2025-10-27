@@ -79,18 +79,21 @@ body {
 }
 
 .image-background-overlay {
-  background-color: rgba(0, 0, 0, 0.844);
+  background-color: rgba(0, 0, 0, 0.919);
   position: fixed;
   inset: 0;
-  z-index: 999;
+  z-index: 99;
   height: 100%;
   width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
   backdrop-filter: blur(6px);
+  cursor: pointer;
+  /* pointer-events: all; */
 }
 body:has(.image-background-overlay) {
   overflow: hidden;
+  background-color: black;
 }
 
 .enlarged-image-container {
@@ -104,7 +107,8 @@ body:has(.image-background-overlay) {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 1rem;
-  border: 2px solid red;
+  /* cursor: default;
+  pointer-events:all; */
 }
 
 .enlarged-image {
@@ -115,18 +119,42 @@ body:has(.image-background-overlay) {
   /* object-fit: cover; */
 }
 
+.close-full-view-button {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 300ms ease-in-out;
+}
+.close-full-view-button:hover{
+  background-color: red;
+}
+
 .nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   color: white;
   font-size: 2rem;
   border: none;
   cursor: pointer;
-  padding: 0.3em 0.6em;
+  height: 40px;
+  width: 40px;
+  text-align: top;
   border-radius: 50%;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.nav-btn span {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .nav-btn:hover {
@@ -134,11 +162,11 @@ body:has(.image-background-overlay) {
 }
 
 .prev-btn {
-  left: -50px;
+  left: 0;
 }
 
 .next-btn {
-  right: -50px;
+  right: 0;
 }
 
 .scroll-back-to-top {
@@ -205,7 +233,7 @@ body:has(.image-background-overlay) {
   padding: 0.5em;
   opacity: 0;
   /* transition: opacity 3s ease-in-out; */
-  animation: footer-visible 2s ease-in 0s 1 forwards;
+  animation: footer-visible 3s ease-in 0s 1 forwards;
 }
 /*Added this animation because the footer was traveling across the screen while the page is
  loading to fix the issue I just made it invisible for the initial 2 seconds we can also do this 
