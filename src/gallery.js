@@ -115,7 +115,6 @@ galleryGrid.addEventListener("click", (e) => {
   closeFullViewButton.classList.add("close-full-view-button");
   closeFullViewButton.innerHTML = "<span>X</span>";
 
-  closeFullViewButton.onclick = () => imageBackground.remove();
   // Append everything
   imageContainer.appendChild(closeFullViewButton);
   imageContainer.appendChild(prevBtn);
@@ -146,34 +145,19 @@ galleryGrid.addEventListener("click", (e) => {
   // });
 
   // keyboard navigation
-  document.addEventListener("keydown", (e) => {
+  const handleKeydown = (e) => {
     if (e.key === "ArrowLeft") showImage(currentIndex - 1);
     if (e.key === "ArrowRight") showImage(currentIndex + 1);
-    if (e.key === "Escape") imageBackground.remove();
-  });
+    if (e.key === "Escape") closeFullView();
+  };
 
-  // touch screen navigation
-  let startX = 0;
+  const closeFullView = () => {
+    document.removeEventListener("keydown", handleKeydown);
+    imageBackground.remove();
+  };
 
-  imageContainer.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  imageContainer.addEventListener("touchend", (e) => {
-    const endX = e.changedTouches[0].clientX;
-    const diff = startX - endX;
-
-    if (Math.abs(diff) > 50) {
-      // threshold for swipe
-      if (diff > 0) {
-        // Swiped left → Next image
-        showImage(currentIndex + 1);
-      } else {
-        // Swiped right → Previous image
-        showImage(currentIndex - 1);
-      }
-    }
-  });
+  closeFullViewButton.onclick = closeFullView;
+  document.addEventListener("keydown", handleKeydown);
 });
 
 // const year = new Date().getFullYear();
