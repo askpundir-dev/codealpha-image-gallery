@@ -75,9 +75,12 @@ scrollBtn.onclick = () => {
   });
 };
 
-const galleryImagesOnWebsite = Array.from(galleryGrid.querySelectorAll("img")); // store all image elements
-console.log(galleryImagesOnWebsite);
 galleryGrid.addEventListener("click", (e) => {
+  const galleryImagesOnWebsite = Array.from(
+    galleryGrid.querySelectorAll("img")
+  ); // store all image elements
+  console.log(galleryImagesOnWebsite);
+
   const image = e.target.closest("img");
   if (!image) return;
 
@@ -107,12 +110,12 @@ galleryGrid.addEventListener("click", (e) => {
   nextBtn.classList.add("nav-btn", "next-btn");
   nextBtn.innerHTML = "<span>→</span>";
 
-  //close button 
-  const closeFullViewButton=document.createElement("button");
+  //close button
+  const closeFullViewButton = document.createElement("button");
   closeFullViewButton.classList.add("close-full-view-button");
-  closeFullViewButton.innerHTML="<span>X</span>";
-  
-  closeFullViewButton.onclick=()=>imageBackground.remove();
+  closeFullViewButton.innerHTML = "<span>X</span>";
+
+  closeFullViewButton.onclick = () => imageBackground.remove();
   // Append everything
   imageContainer.appendChild(closeFullViewButton);
   imageContainer.appendChild(prevBtn);
@@ -123,27 +126,53 @@ galleryGrid.addEventListener("click", (e) => {
 
   // Navigation logic
   const showImage = (index) => {
-    const total = galleryImages.length;
+    const total = galleryImagesOnWebsite.length;
     if (index < 0) index = total - 1;
     if (index >= total) index = 0;
-    imageElem.src = galleryImages[index].src;
-    imageElem.alt = galleryImages[index].alt;
+    imageElem.src = galleryImagesOnWebsite[index].src;
+    imageElem.alt = galleryImagesOnWebsite[index].alt;
     currentIndex = index;
   };
 
   prevBtn.addEventListener("click", () => showImage(currentIndex - 1));
   nextBtn.addEventListener("click", () => showImage(currentIndex + 1));
 
-  // Close modal when clicking background
-  imageBackground.addEventListener("click", (e) => {
-    if (e.target === imageBackground) imageBackground.remove();
-  });
+  prevBtn.addEventListener("click", () => showImage(currentIndex - 1));
+  nextBtn.addEventListener("click", () => showImage(currentIndex + 1));
 
-  // Optional: keyboard navigation
+  // // Close modal when clicking background
+  // imageBackground.addEventListener("click", (e) => {
+  //   if (e.target === imageBackground) imageBackground.remove();
+  // });
+
+  // keyboard navigation
   document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") showImage(currentIndex - 1);
     if (e.key === "ArrowRight") showImage(currentIndex + 1);
     if (e.key === "Escape") imageBackground.remove();
+  });
+
+  // touch screen navigation
+  let startX = 0;
+
+  imageContainer.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  imageContainer.addEventListener("touchend", (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > 50) {
+      // threshold for swipe
+      if (diff > 0) {
+        // Swiped left → Next image
+        showNextImage();
+      } else {
+        // Swiped right → Previous image
+        showPreviousImage();
+      }
+    }
   });
 });
 
