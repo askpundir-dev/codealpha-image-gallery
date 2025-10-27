@@ -46,633 +46,79 @@
       </svg>
     </button>
 
-    <script>
-      const galleryGrid = document.querySelector(".gallery-grid");
-      console.log([galleryGrid]);
-      const galleryImages = [
-        {
-          src: "public/gallery-images/nature/dawn-bridge-river-scenery.jpg",
-          alt: "Beautiful dawn bridge over calm river with scenic surroundings",
-          type: "nature",
-          keywords: [
-            "dawn",
-            "bridge",
-            "river",
-            "sunrise",
-            "landscape",
-            "scenery",
-          ],
-        },
-        {
-          src: "public/gallery-images/nature/fence-forest-river.jpg",
-          alt: "Wooden fence beside peaceful forest river scenery",
-          type: "nature",
-          keywords: [
-            "fence",
-            "forest",
-            "river",
-            "trees",
-            "nature",
-            "landscape",
-          ],
-        },
-        {
-          src: "public/gallery-images/nature/foggy-evening-white-flowers-tree.jpg",
-          alt: "Foggy evening with white flowers and a lonely tree",
-          type: "nature",
-          keywords: ["fog", "flowers", "tree", "evening", "mist", "scenery"],
-        },
-        {
-          src: "public/gallery-images/nature/forest-peace-bench.jpg",
-          alt: "Peaceful forest view with a wooden bench",
-          type: "nature",
-          keywords: [
-            "forest",
-            "bench",
-            "peaceful",
-            "trees",
-            "serene",
-            "relaxing",
-          ],
-        },
-        {
-          src: "public/gallery-images/nature/forest-trees-night.jpg",
-          alt: "Nighttime forest with dark trees under moonlight",
-          type: "nature",
-          keywords: [
-            "forest",
-            "night",
-            "trees",
-            "dark",
-            "moonlight",
-            "mystery",
-          ],
-        },
-        {
-          src: "public/gallery-images/nature/green-leaves.avif",
-          alt: "Close-up of green leaves with natural lighting",
-          type: "nature",
-          keywords: ["leaves", "green", "foliage", "nature", "plants", "fresh"],
-        },
-        {
-          src: "public/gallery-images/nature/leaves.avif",
-          alt: "Detailed leaves texture in sunlight",
-          type: "nature",
-          keywords: [
-            "leaves",
-            "sunlight",
-            "green",
-            "natural",
-            "plant",
-            "texture",
-          ],
-        },
-        {
-          src: "public/gallery-images/nature/moon-light-lake-reflection.jpg",
-          alt: "Moonlight reflecting on a calm lake at night",
-          type: "nature",
-          keywords: [
-            "moonlight",
-            "lake",
-            "reflection",
-            "night",
-            "calm",
-            "stars",
-          ],
-        },
-        {
-          src: "public/gallery-images/nature/moon-light-mountain.jpg",
-          alt: "Moonlit mountain landscape at night",
-          type: "nature",
-          keywords: ["moon", "mountain", "night", "sky", "stars", "peaceful"],
-        },
-        {
-          src: "public/gallery-images/nature/mountain-scenery.jpg",
-          alt: "Majestic mountain scenery with blue sky",
-          type: "nature",
-          keywords: [
-            "mountain",
-            "scenery",
-            "sky",
-            "landscape",
-            "hills",
-            "view",
-          ],
-        },
-        {
-          src: "public/gallery-images/nature/mountain-sky-snow.avif",
-          alt: "Snow-covered mountain peaks under a clear sky",
-          type: "nature",
-          keywords: ["mountain", "snow", "sky", "winter", "peaks", "landscape"],
-        },
-        {
-          src: "public/gallery-images/nature/night-light-forest.avif",
-          alt: "Forest illuminated by soft night light",
-          type: "nature",
-          keywords: ["forest", "night", "light", "trees", "glow", "peaceful"],
-        },
-        {
-          src: "public/gallery-images/nature/night-sky-stars.webp",
-          alt: "Night sky filled with stars and constellations",
-          type: "nature",
-          keywords: ["night", "sky", "stars", "space", "cosmos", "dark"],
-        },
-        {
-          src: "public/gallery-images/nature/roses.avif",
-          alt: "Beautiful blooming red roses close-up",
-          type: "nature",
-          keywords: ["roses", "flowers", "red", "bloom", "petals", "garden"],
-        },
-        {
-          src: "public/gallery-images/nature/ocean-waves.avif",
-          alt: "Ocean waves crashing on shore",
-          type: "nature",
-          keywords: ["ocean", "waves", "sea", "water", "beach", "surf"],
-        },
-        {
-          src: "public/gallery-images/nature/scenery-evening-flowers-yellow.jpg",
-          alt: "Evening scenery with yellow flowers in bloom",
-          type: "nature",
-          keywords: [
-            "flowers",
-            "evening",
-            "yellow",
-            "scenery",
-            "nature",
-            "sunset",
-          ],
-        },
-        {
-          src: "public/gallery-images/nature/sky-clouds-sunray.avif",
-          alt: "Sky with clouds and bright sun rays shining through",
-          type: "nature",
-          keywords: ["sky", "clouds", "sun", "rays", "light", "heaven"],
-        },
-        {
-          src: "public/gallery-images/nature/sky-mountain-lake.jpg",
-          alt: "Mountain lake reflecting the sky and peaks",
-          type: "nature",
-          keywords: [
-            "lake",
-            "mountain",
-            "sky",
-            "reflection",
-            "nature",
-            "scenery",
-          ],
-        },
-        {
-          src: "public/gallery-images/nature/small-bridge-forest-greeny-around.jpg",
-          alt: "Small wooden bridge surrounded by lush green forest",
-          type: "nature",
-          keywords: ["bridge", "forest", "green", "nature", "wooden", "path"],
-        },
-        {
-          src: "public/gallery-images/nature/small-bridge-forest.jpg",
-          alt: "Rustic small bridge inside a dense forest",
-          type: "nature",
-          keywords: [
-            "bridge",
-            "forest",
-            "pathway",
-            "nature",
-            "trees",
-            "serene",
-          ],
-        },
-        {
-          src: "public/gallery-images/nature/snow-forest-evening.avif",
-          alt: "Evening snow covering forest trees under soft light",
-          type: "nature",
-          keywords: ["snow", "forest", "evening", "winter", "cold", "peaceful"],
-        },
-        {
-          src: "public/gallery-images/nature/tree-no-leaves-dry.avif",
-          alt: "Dry tree with no leaves standing in open field",
-          type: "nature",
-          keywords: ["tree", "dry", "leaves", "barren", "nature", "minimal"],
-        },
+    <footer class="footer">
+      <a href="gallery.html" title="refresh page">
+        <svg
+          class="name-logo"
+          width="70"
+          height="70"
+          viewBox="0 0 406 368"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M314.516 203.174L314.516 349.104L162.117 208.727M314.516 203.174L282.653 203.26M314.516 203.174L337.498 203.26L380.617 170.782L314.516 170.782M162.117 208.727L117.661 170.634L157.117 170.782M162.117 208.727L65.1165 301.139L20.176 301.139L137.099 188.83M200.117 170.782L282.653 96.1739L282.653 170.782M200.117 170.782L282.653 170.782M200.117 170.782L157.117 170.782M282.653 203.26L210.462 202.796L282.653 270.76L282.653 203.26ZM282.653 170.782L314.516 170.782M157.117 170.782L315.751 20.1061L314.516 170.782"
+            stroke="currentColor"
+            stroke-width="10"
+          />
+        </svg>
+      </a>
 
-        {
-          src: "public/gallery-images/bikes/bicycle-flowers-field.avif",
-          alt: "bicycle in flower field at sunrise",
-          type: "bike",
-          keywords: ["bicycle", "flowers", "nature", "morning", "ride"],
-        },
-        {
-          src: "public/gallery-images/bikes/blue-stripes-s1000-rr-white-bike.avif",
-          alt: "BMW S1000RR white bike with blue stripes",
-          type: "bike",
-          keywords: ["bmw", "s1000rr", "superbike", "white", "blue", "sports"],
-        },
-        {
-          src: "public/gallery-images/bikes/bmw-bike.avif",
-          alt: "BMW sports bike parked outdoors",
-          type: "bike",
-          keywords: ["bmw", "motorcycle", "superbike", "sports"],
-        },
-        {
-          src: "public/gallery-images/bikes/bmw-s1000-rr-black-bike.avif",
-          alt: "BMW S1000RR black edition superbike",
-          type: "bike",
-          keywords: ["bmw", "s1000rr", "black", "motorcycle", "sports"],
-        },
-        {
-          src: "public/gallery-images/bikes/bmw-s1000rr-black-race-track-bike.avif",
-          alt: "BMW S1000RR on race track",
-          type: "bike",
-          keywords: ["bmw", "s1000rr", "race", "track", "superbike"],
-        },
-        {
-          src: "public/gallery-images/bikes/bmw-s1000rr-metallic-gray-sports-bike.avif",
-          alt: "BMW S1000RR metallic gray bike",
-          type: "bike",
-          keywords: ["bmw", "s1000rr", "gray", "superbike", "premium"],
-        },
-        {
-          src: "public/gallery-images/bikes/bmw-s1000rr-red-bike.avif",
-          alt: "BMW S1000RR red color edition",
-          type: "bike",
-          keywords: ["bmw", "s1000rr", "red", "motorcycle", "performance"],
-        },
-        {
-          src: "public/gallery-images/bikes/bmw-s1000rr-whit-blue-red-bike.avif",
-          alt: "BMW S1000RR white blue red edition",
-          type: "bike",
-          keywords: ["bmw", "s1000rr", "white", "blue", "red", "tricolor"],
-        },
-        {
-          src: "public/gallery-images/bikes/duke-white-390-head-light-view-bike.avif",
-          alt: "KTM Duke 390 white headlight closeup",
-          type: "bike",
-          keywords: ["ktm", "duke", "390", "headlight", "white", "naked"],
-        },
-        {
-          src: "public/gallery-images/bikes/harley-devidson-bike.avif",
-          alt: "Harley Davidson cruiser motorcycle",
-          type: "bike",
-          keywords: ["harley", "davidson", "cruiser", "classic", "bike"],
-        },
-        {
-          src: "public/gallery-images/bikes/kawasaki-ninja-h2r-neon-stripes-black-bike.jpg",
-          alt: "Kawasaki Ninja H2R black with neon stripes",
-          type: "bike",
-          keywords: ["kawasaki", "ninja", "h2r", "black", "neon", "superbike"],
-        },
-        {
-          src: "public/gallery-images/bikes/kawasaki-ninja-metallic-gray-bike.avif",
-          alt: "Kawasaki Ninja metallic gray edition",
-          type: "bike",
-          keywords: ["kawasaki", "ninja", "gray", "motorcycle"],
-        },
-        {
-          src: "public/gallery-images/bikes/kawasaki-z900-black-head-light-view-bike.avif",
-          alt: "Kawasaki Z900 headlight close-up",
-          type: "bike",
-          keywords: ["kawasaki", "z900", "headlight", "black", "streetfighter"],
-        },
-        {
-          src: "public/gallery-images/bikes/ktm-duke-1290-blue.bike.avif",
-          alt: "KTM Duke 1290 blue edition",
-          type: "bike",
-          keywords: ["ktm", "duke", "1290", "blue", "naked", "bike"],
-        },
-        {
-          src: "public/gallery-images/bikes/ktm-duke-1290-super-duke-blue.avif",
-          alt: "KTM Super Duke 1290 blue version",
-          type: "bike",
-          keywords: ["ktm", "super", "duke", "1290", "blue", "motorcycle"],
-        },
-        {
-          src: "public/gallery-images/bikes/ktm-duke-orange-superduke-bike.avif",
-          alt: "KTM Duke orange Super Duke",
-          type: "bike",
-          keywords: ["ktm", "super", "duke", "orange", "naked", "motorcycle"],
-        },
-        {
-          src: "public/gallery-images/bikes/orange-black-cool-bike.avif",
-          alt: "orange and black cool sports bike",
-          type: "bike",
-          keywords: ["sports", "bike", "orange", "black", "stylish"],
-        },
-        {
-          src: "public/gallery-images/bikes/s1000rr-black-blue-white.avif",
-          alt: "BMW S1000RR black blue white edition",
-          type: "bike",
-          keywords: ["bmw", "s1000rr", "black", "blue", "white", "superbike"],
-        },
-        {
-          src: "public/gallery-images/bikes/s1000rr-blue-sports-bike.avif",
-          alt: "BMW S1000RR blue edition sports bike",
-          type: "bike",
-          keywords: ["bmw", "s1000rr", "blue", "racing", "motorcycle"],
-        },
-        {
-          src: "public/gallery-images/bikes/s1000rr-bmw-mettallic-gray-bike.avif",
-          alt: "BMW S1000RR metallic gray version",
-          type: "bike",
-          keywords: ["bmw", "s1000rr", "gray", "sports", "bike"],
-        },
-        {
-          src: "public/gallery-images/bikes/s100rr-white-blue-red-black.avif",
-          alt: "BMW S1000RR white blue red black edition",
-          type: "bike",
-          keywords: ["bmw", "s1000rr", "white", "blue", "red", "black"],
-        },
-        {
-          src: "public/gallery-images/bikes/z-900-black-bike.avif",
-          alt: "Kawasaki Z900 black edition streetfighter",
-          type: "bike",
-          keywords: ["kawasaki", "z900", "black", "naked", "bike"],
-        },
-        {
-          src: "public/gallery-images/bikes/z-900-eagle-eye-view-black-bike.avif",
-          alt: "Kawasaki Z900 top view black color",
-          type: "bike",
-          keywords: ["kawasaki", "z900", "top", "view", "black", "motorcycle"],
-        },
-        {
-          src: "public/gallery-images/bikes/z-900-full-black-wind-shield-bike.avif",
-          alt: "Kawasaki Z900 full black with windshield",
-          type: "bike",
-          keywords: [
-            "kawasaki",
-            "z900",
-            "black",
-            "windshield",
-            "streetfighter",
-          ],
-        },
-        {
-          src: "public/gallery-images/bikes/zx-10r-red-black-bike.jpg",
-          alt: "Kawasaki ZX10R red and black edition",
-          type: "bike",
-          keywords: ["kawasaki", "zx10r", "red", "black", "superbike"],
-        },
-        {
-          src: "public/gallery-images/bikes/zx10r-green-neon-bike.jpg",
-          alt: "Kawasaki ZX10R green neon edition",
-          type: "bike",
-          keywords: ["kawasaki", "zx10r", "green", "neon", "racing"],
-        },
-      ];
+      <ul class="media-icons-container">
+        <li title="linkedin">
+          <a
+            href="https://linkedin.com/in/abhi-dev-pundir"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <svg
+              class="social-media-icons"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <path
+                fill="currentColor"
+                d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"
+              />
+            </svg>
+          </a>
+        </li>
+        <li title="github">
+          <a
+            href="https://github.com/askpundir-dev"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <svg
+              class="social-media-icons"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 496 512"
+            >
+              <path
+                fill="currentColor"
+                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+              />
+            </svg>
+          </a>
+        </li>
+        <li title="mail">
+          <a href="mailto:pundir0224@gmail.com">
+            <svg
+              class="social-media-icons"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="currentColor"
+                d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"
+              />
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <p class="copy-right-para"></p>
+    </footer>
 
-      const carImages = [
-        {
-          src: "public/gallery-images/cars/all-black-nice-car.avif",
-          alt: "Black luxury car",
-          type: "car",
-          keywords: ["black", "car", "luxury", "cool"],
-        },
-        {
-          src: "public/gallery-images/cars/audi-black-front-view-car.avif",
-          alt: "Audi black front view car",
-          type: "car",
-          keywords: ["audi", "black", "car", "front", "luxury"],
-        },
-        {
-          src: "public/gallery-images/cars/black-bonut-metallic-blue-headlight-view-nissan-gtr-car.avif",
-          alt: "Nissan GTR black metallic blue car",
-          type: "car",
-          keywords: ["nissan", "gtr", "black", "blue", "sports"],
-        },
-        {
-          src: "public/gallery-images/cars/black-ferrari-headlight-view-car.avif",
-          alt: "Black Ferrari sports car",
-          type: "car",
-          keywords: ["ferrari", "black", "sports", "luxury"],
-        },
-        {
-          src: "public/gallery-images/cars/black-in -garage-m1-car.avif",
-          alt: "Black M1 car in garage",
-          type: "car",
-          keywords: ["m1", "garage", "black", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/black-mercedes-headlight-view-sports-car.avif",
-          alt: "Black Mercedes sports car",
-          type: "car",
-          keywords: ["mercedes", "sports", "black", "car", "luxury"],
-        },
-        {
-          src: "public/gallery-images/cars/black-sports-car.avif",
-          alt: "Black sports car",
-          type: "car",
-          keywords: ["black", "sports", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/black-sports-cool-car.avif",
-          alt: "Cool black sports car",
-          type: "car",
-          keywords: ["black", "cool", "sports", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/black-sports-night-street-car.avif",
-          alt: "Black sports car at night",
-          type: "car",
-          keywords: ["black", "night", "street", "sports", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/blue-sports-car.avif",
-          alt: "Blue sports car",
-          type: "car",
-          keywords: ["blue", "sports", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/blue-stripes-sports-headlight-view-white-car.avif",
-          alt: "White sports car with blue stripes",
-          type: "car",
-          keywords: ["white", "blue", "sports", "stripes", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/brown-metallic-antique-car.avif",
-          alt: "Brown metallic antique car",
-          type: "car",
-          keywords: ["antique", "brown", "metallic", "classic", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/evening-black-sports-car.avif",
-          alt: "Black sports car in evening",
-          type: "car",
-          keywords: ["black", "evening", "sports", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/ferrari-mettalic-red-rear-view-car.avif",
-          alt: "Red Ferrari rear view",
-          type: "car",
-          keywords: ["ferrari", "red", "rear", "sports", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/ferrari-stearing-inside-car.avif",
-          alt: "Ferrari steering interior",
-          type: "car",
-          keywords: ["ferrari", "interior", "steering", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/ferrari-tyre-rim-car.avif",
-          alt: "Ferrari wheel rim closeup",
-          type: "car",
-          keywords: ["ferrari", "wheel", "rim", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/flower-field-white-sports-car.avif",
-          alt: "White sports car in flower field",
-          type: "car",
-          keywords: ["white", "sports", "field", "nature", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/gray-back-look-car.avif",
-          alt: "Gray car rear view",
-          type: "car",
-          keywords: ["gray", "rear", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/gray-bmw-car-cool.avif",
-          alt: "Gray BMW car",
-          type: "car",
-          keywords: ["bmw", "gray", "cool", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/green-lambo-sports-car.avif",
-          alt: "Green Lamborghini sports car",
-          type: "car",
-          keywords: ["lambo", "green", "sports", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/lambo-black-street-car.avif",
-          alt: "Black Lamborghini on street",
-          type: "car",
-          keywords: ["lambo", "black", "street", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/lambo-red-sports-car.avif",
-          alt: "Red Lamborghini sports car",
-          type: "car",
-          keywords: ["lambo", "red", "sports", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/lambo-sports-cool-car.avif",
-          alt: "Cool Lamborghini sports car",
-          type: "car",
-          keywords: ["lambo", "cool", "sports", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/magenta-antique-car.avif",
-          alt: "Magenta antique car",
-          type: "car",
-          keywords: ["magenta", "antique", "classic", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/neon-lambo-sports-verycool-car.avif",
-          alt: "Neon Lamborghini sports car",
-          type: "car",
-          keywords: ["lambo", "neon", "sports", "car", "cool"],
-        },
-        {
-          src: "public/gallery-images/cars/nissan-gtr-mettalic-gray-red-alloy-rear-view-car.avif",
-          alt: "Nissan GTR metallic gray rear view",
-          type: "car",
-          keywords: ["nissan", "gtr", "gray", "rear", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/nissan-gtr-rear-view-black-car.avif",
-          alt: "Nissan GTR black rear view",
-          type: "car",
-          keywords: ["nissan", "gtr", "black", "rear", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/nissan-gtr-white-rear-view-orange-exost-car.avif",
-          alt: "White Nissan GTR rear view",
-          type: "car",
-          keywords: ["nissan", "gtr", "white", "rear", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/orange-black-mclaren.avif",
-          alt: "Orange black McLaren sports car",
-          type: "car",
-          keywords: ["mclaren", "orange", "black", "sports", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/orange-sports-car.avif",
-          alt: "Orange sports car",
-          type: "car",
-          keywords: ["orange", "sports", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/red-ferrari-street-left-side-view-car.avif",
-          alt: "Red Ferrari on street",
-          type: "car",
-          keywords: ["ferrari", "red", "street", "sports", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/red-mercedes-left-side-forest-car.avif",
-          alt: "Red Mercedes in forest",
-          type: "car",
-          keywords: ["mercedes", "red", "forest", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/white-blue-stripes-car.avif",
-          alt: "White car with blue stripes",
-          type: "car",
-          keywords: ["white", "blue", "stripes", "car", "sports"],
-        },
-        {
-          src: "public/gallery-images/cars/white-ferrari-headlight-view.avif",
-          alt: "White Ferrari headlight view",
-          type: "car",
-          keywords: ["ferrari", "white", "headlight", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/white-sports-back-view-car.avif",
-          alt: "White sports car rear view",
-          type: "car",
-          keywords: ["white", "rear", "sports", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/yellow-lambo-sports-car.avif",
-          alt: "Yellow Lamborghini sports car",
-          type: "car",
-          keywords: ["lambo", "yellow", "sports", "car"],
-        },
-        {
-          src: "public/gallery-images/cars/yellow-ferrari-cool-sports-car.avif",
-          alt: "Yellow Ferrari sports car",
-          type: "car",
-          keywords: ["ferrari", "yellow", "sports", "car"],
-        },
-      ];
-
-      galleryImages.forEach((image) => {
-        const imageContainer = document.createElement("div");
-        imageContainer.className = "image-container";
-        const imageElem = document.createElement("img");
-        imageElem.alt = image.alt;
-        imageElem.src = image.src;
-        imageElem.loading = "lazy";
-
-        imageContainer.appendChild(imageElem);
-        galleryGrid.appendChild(imageContainer);
-      });
-
-      //full scroll back to top logic 🔥
-      const scrollBtn = document.querySelector(".scroll-back-to-top");
-      let lastScrollTime = 0;
-
-      window.addEventListener("scroll", () => {
-        const now = Date.now();
-        if (now - lastScrollTime < 100) return; // throttle to every 100ms
-        lastScrollTime = now;
-
-        const shouldShow = window.scrollY > 200;
-        scrollBtn.classList.toggle("scroll-top-active", shouldShow);
-      });
-
-      scrollBtn.onclick = () => {
-        scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      };
-    </script>
+    <script type="module" src="gallery.js"></script>
   </body>
 </html>
