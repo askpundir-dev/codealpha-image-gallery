@@ -233,10 +233,10 @@ body:has(.image-background-overlay) {
   padding: 0.5em;
   opacity: 0;
   /* transition: opacity 3s ease-in-out; */
-  animation: footer-visible 3s ease-in 0s 1 forwards;
+  animation: footer-visible 500ms ease-in 5s 1 forwards;
 }
 /*Added this animation because the footer was traveling across the screen while the page is
- loading to fix the issue I just made it invisible for the initial 2 seconds we can also do this 
+ loading to fix the issue I just made it invisible for the initial 5 seconds we can also do this 
  with DOMContentLoaded event in js*/
 @keyframes footer-visible {
   to {
