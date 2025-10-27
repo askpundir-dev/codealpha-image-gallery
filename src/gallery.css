@@ -40,11 +40,15 @@ body {
 
 .tabs-container li {
   border-radius: 3px;
-  padding: 0 5px;
+  padding: 0 9px;
   background-color: white;
   position: relative;
   z-index: 99;
   cursor: pointer;
+}
+
+.tabs-container .active {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
 }
 
 .gallery-grid {
@@ -72,6 +76,69 @@ body {
   cursor: pointer;
   transform: scale(1.05);
   box-shadow: -1px 1px 3px 1px transparent;
+}
+
+.image-background-overlay {
+  background-color: rgba(0, 0, 0, 0.844);
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  backdrop-filter: blur(6px);
+}
+body:has(.image-background-overlay) {
+  overflow: hidden;
+}
+
+.enlarged-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  border: 2px solid red;
+}
+
+.enlarged-image {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 1rem;
+
+  /* object-fit: cover; */
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  padding: 0.3em 0.6em;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.prev-btn {
+  left: -50px;
+}
+
+.next-btn {
+  right: -50px;
 }
 
 .scroll-back-to-top {
@@ -136,6 +203,17 @@ body {
   height: fit-content;
   width: block;
   padding: 0.5em;
+  opacity: 0;
+  /* transition: opacity 3s ease-in-out; */
+  animation: footer-visible 2s ease-in 0s 1 forwards;
+}
+/*Added this animation because the footer was traveling across the screen while the page is
+ loading to fix the issue I just made it invisible for the initial 2 seconds we can also do this 
+ with DOMContentLoaded event in js*/
+@keyframes footer-visible {
+  to {
+    opacity: 1;
+  }
 }
 
 .footer .name-logo {
