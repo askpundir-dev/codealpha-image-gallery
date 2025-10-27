@@ -83,7 +83,7 @@ body {
   /* animation: image-fade-in 0.2s ease-in-out  1 forwards; */
 }
 @keyframes image-fade-in {
-  from{
+  from {
     opacity: 0;
   }
   to {
@@ -134,8 +134,8 @@ body:has(.image-background-overlay) {
   max-height: 100%;
   max-width: 100%;
   border-radius: 1rem;
-
-  /* object-fit: cover; */
+  transition: opacity 0.3s ease-in-out;
+  /* object-fit: cover;*/
 }
 
 .close-full-view-button {
@@ -233,10 +233,10 @@ body:has(.image-background-overlay) {
     /* box-shadow: -2px -2px 8px rgba(0, 0, 0, 0.236); */
   }
   @keyframes show-shadow {
-  to {
-    box-shadow: -2px -2px 8px rgba(0, 0, 0, 0.625);
+    to {
+      box-shadow: -2px -2px 8px rgba(0, 0, 0, 0.625);
+    }
   }
-}
 }
 
 @media (min-width: 1500px) {
@@ -258,6 +258,7 @@ body:has(.image-background-overlay) {
   justify-content: center;
   height: fit-content;
   padding: 0.5em;
+  background: linear-gradient(120deg, #2b5876, #4e4376);
   /* opacity: 0; */
   /* transition: opacity 3s ease-in-out; */
   /* animation: footer-visible 500ms ease-in 5s 1 forwards; */
@@ -272,7 +273,7 @@ body:has(.image-background-overlay) {
 }
 
 .footer .name-logo {
-  color: green;
+  color: rgb(101, 227, 231);
 }
 .footer .name-logo:hover {
   color: white;

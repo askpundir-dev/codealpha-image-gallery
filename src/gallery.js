@@ -117,12 +117,16 @@ galleryGrid.addEventListener("click", (e) => {
 
   // Navigation logic
   const showImage = (index) => {
+    imageElem.style.opacity = 0;
     const total = visibleImages.length;
     if (index < 0) index = total - 1;
     if (index >= total) index = 0;
-    imageElem.src = visibleImages[index].src;
-    imageElem.alt = visibleImages[index].alt;
-    currentIndex = index;
+    setTimeout(() => {
+      imageElem.src = visibleImages[index].src;
+      imageElem.alt = visibleImages[index].alt;
+      currentIndex = index;
+      imageElem.onload = () => (imageElem.style.opacity = 1);
+    }, 150);
   };
 
   prevBtn.addEventListener("click", () => showImage(currentIndex - 1));
@@ -142,6 +146,32 @@ galleryGrid.addEventListener("click", (e) => {
     if (e.key === "ArrowRight") showImage(currentIndex + 1);
     if (e.key === "Escape") closeFullView();
   };
+
+  // touch screen navigation
+  let startX = 0;
+  imageContainer.addEventListener("touchmove", (e) => e.preventDefault(), {
+    passive: false,
+  });
+
+  imageContainer.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  imageContainer.addEventListener("touchend", (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > 50) {
+      // threshold for swipe
+      if (diff > 0) {
+        // Swiped left = Next image
+        showImage(currentIndex + 1);
+      } else {
+        // Swiped right = Previous image
+        showImage(currentIndex - 1);
+      }
+    }
+  });
 
   const closeFullView = () => {
     document.removeEventListener("keydown", handleKeydown);
