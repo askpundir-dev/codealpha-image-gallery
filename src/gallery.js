@@ -167,10 +167,10 @@ galleryGrid.addEventListener("click", (e) => {
       // threshold for swipe
       if (diff > 0) {
         // Swiped left → Next image
-        showNextImage();
+        showImage(currentIndex + 1);
       } else {
         // Swiped right → Previous image
-        showPreviousImage();
+        showImage(currentIndex - 1);
       }
     }
   });
