@@ -1,5 +1,4 @@
 import { galleryImages } from "./data/galleryImagesArray.js";
-import { carImages } from "./data/carImagesArray.js";
 
 const galleryGrid = document.querySelector(".gallery-grid");
 // console.log([galleryGrid]);
@@ -10,11 +9,15 @@ galleryImages.forEach((image) => {
   const imageElem = document.createElement("img");
   imageElem.alt = image.alt;
   imageElem.src = image.src;
+  imageElem.dataset.type = image.type;
   imageElem.loading = "lazy";
 
   imageContainer.appendChild(imageElem);
   galleryGrid.appendChild(imageContainer);
 });
+
+const allImageNodeList = galleryGrid.querySelectorAll("img");
+// console.log(allImageNodeList);
 
 const tabsContainer = document.querySelector(".tabs-container");
 const tabs = tabsContainer.querySelectorAll(".tabs-container li");
@@ -27,36 +30,24 @@ tabsContainer.addEventListener("click", (e) => {
   tabs.forEach((t) => t.classList.remove("active"));
   e.target.classList.add("active");
   console.log(e.target);
-
-  //clear existing images
-  galleryGrid.innerHTML = "";
-
-  let imagesToDisplay = [];
   if (selectedCategory === "all") {
-    imagesToDisplay = [...galleryImages, ...carImages];
-  } else if (selectedCategory === "nature") {
-    imagesToDisplay = galleryImages.filter((img) => img.type === "nature");
-  } else if (selectedCategory === "cars") {
-    imagesToDisplay = carImages;
-  } else if (selectedCategory === "bikes") {
-    imagesToDisplay = galleryImages.filter((img) => img.type === "bike");
+    allImageNodeList.forEach((img) => {
+      img.parentElement.style.display = "block";
+    });
+  } else {
+    allImageNodeList.forEach((img) => {
+      if (img.dataset.type === selectedCategory) {
+        img.parentElement.style.display = "block";
+      } else {
+        img.parentElement.style.display = "none";
+      }
+    });
   }
-
-  imagesToDisplay.forEach((image) => {
-    const imageContainer = document.createElement("div");
-    imageContainer.className = "image-container";
-    const imageElem = document.createElement("img");
-    imageElem.alt = image.alt;
-    imageElem.src = image.src;
-    imageElem.loading = "lazy";
-
-    imageContainer.appendChild(imageElem);
-    galleryGrid.appendChild(imageContainer);
-  });
 });
 
 //full scroll back to top logic with throttling 🔥
-const scrollBtn = document.querySelector(".scroll-back-to-top");
+const footer = document.querySelector(".footer");
+const scrollBtn = footer.querySelector(".scroll-back-to-top");
 let lastScrollTime = 0;
 
 window.addEventListener("scroll", () => {
@@ -76,16 +67,17 @@ scrollBtn.onclick = () => {
 };
 
 galleryGrid.addEventListener("click", (e) => {
-  const galleryImagesOnWebsite = Array.from(
-    galleryGrid.querySelectorAll("img")
-  ); // store all image elements
-  console.log(galleryImagesOnWebsite);
+  const visibleImages = [...allImageNodeList].filter(
+    (img) => img.parentElement.style.display !== "none"
+  );
+
+  console.log(visibleImages);
 
   const image = e.target.closest("img");
   if (!image) return;
 
   // Find index of clicked image
-  let currentIndex = galleryImagesOnWebsite.indexOf(image);
+  let currentIndex = visibleImages.indexOf(image);
 
   // Create overlay
   const imageBackground = document.createElement("div");
@@ -125,11 +117,11 @@ galleryGrid.addEventListener("click", (e) => {
 
   // Navigation logic
   const showImage = (index) => {
-    const total = galleryImagesOnWebsite.length;
+    const total = visibleImages.length;
     if (index < 0) index = total - 1;
     if (index >= total) index = 0;
-    imageElem.src = galleryImagesOnWebsite[index].src;
-    imageElem.alt = galleryImagesOnWebsite[index].alt;
+    imageElem.src = visibleImages[index].src;
+    imageElem.alt = visibleImages[index].alt;
     currentIndex = index;
   };
 

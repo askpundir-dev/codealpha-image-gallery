@@ -1,7 +1,10 @@
 body {
   overflow-x: hidden;
   width: 100%;
-  height: auto;
+  min-height: 100vh;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -52,6 +55,7 @@ body {
 }
 
 .gallery-grid {
+  min-height: 100vh;
   padding: 5px 8px;
   column-count: 3;
   column-gap: 6px;
@@ -60,16 +64,31 @@ body {
 .gallery-grid .image-container {
   border: 1px solid white;
   border-radius: 2px;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin: 3px 0;
   transition: all 300ms ease-in-out;
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
+  animation: card-effect 400ms ease-in-out 2.5s 1 forwards;
+}
+@keyframes card-effect {
+  to {
+    box-shadow: -2px -2px 8px rgba(0, 0, 0, 0.292);
+  }
 }
 .gallery-grid .image-container > img {
   border-radius: 2px;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* opacity: 0; */
+  /* animation: image-fade-in 0.2s ease-in-out  1 forwards; */
+}
+@keyframes image-fade-in {
+  from{
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .gallery-grid .image-container:hover {
@@ -131,7 +150,7 @@ body:has(.image-background-overlay) {
   cursor: pointer;
   transition: background-color 300ms ease-in-out;
 }
-.close-full-view-button:hover{
+.close-full-view-button:hover {
   background-color: red;
 }
 
@@ -211,8 +230,13 @@ body:has(.image-background-overlay) {
     margin: 8px 6px;
     border: 3px solid transparent;
     border-radius: 0.2rem;
-    box-shadow: -2px -2px 8px rgba(0, 0, 0, 0.236);
+    /* box-shadow: -2px -2px 8px rgba(0, 0, 0, 0.236); */
   }
+  @keyframes show-shadow {
+  to {
+    box-shadow: -2px -2px 8px rgba(0, 0, 0, 0.625);
+  }
+}
 }
 
 @media (min-width: 1500px) {
@@ -222,6 +246,10 @@ body:has(.image-background-overlay) {
 }
 
 .footer {
+  /* flex: 1; */
+  margin-top: auto;
+  max-height: fit-content;
+  /* align-self:; */
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -229,11 +257,10 @@ body:has(.image-background-overlay) {
   align-items: center;
   justify-content: center;
   height: fit-content;
-  width: block;
   padding: 0.5em;
-  opacity: 0;
+  /* opacity: 0; */
   /* transition: opacity 3s ease-in-out; */
-  animation: footer-visible 500ms ease-in 5s 1 forwards;
+  /* animation: footer-visible 500ms ease-in 5s 1 forwards; */
 }
 /*Added this animation because the footer was traveling across the screen while the page is
  loading to fix the issue I just made it invisible for the initial 5 seconds we can also do this 
