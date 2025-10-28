@@ -7,6 +7,7 @@ galleryImages.forEach((image) => {
   const imageContainer = document.createElement("div");
   imageContainer.className = "image-container";
   const imageElem = document.createElement("img");
+  imageElem.className = "images";
   imageElem.alt = image.alt;
   imageElem.src = image.src;
   imageElem.dataset.type = image.type;
@@ -14,6 +15,18 @@ galleryImages.forEach((image) => {
 
   imageContainer.appendChild(imageElem);
   galleryGrid.appendChild(imageContainer);
+  imageElem.classList.add("loading");
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const images = galleryGrid.querySelectorAll(".images.loading");
+
+  if (images.length > 0) {
+    setTimeout(() => {
+      images.forEach((image) => {
+        image.classList.remove("loading");
+      });
+    }, 1500);
+  }
 });
 
 const allImageNodeList = galleryGrid.querySelectorAll("img");
