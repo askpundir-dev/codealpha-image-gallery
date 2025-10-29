@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       images.forEach((image) => {
         image.classList.remove("loading");
       });
-    }, 1500);
+    }, 1000);
   }
 });
 
