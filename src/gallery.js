@@ -3,6 +3,9 @@ import { galleryImages } from "./data/galleryImagesArray.js";
 const galleryGrid = document.querySelector(".gallery-grid");
 // console.log([galleryGrid]);
 
+const footer = document.querySelector(".footer");
+const scrollBtn = footer.querySelector(".scroll-back-to-top");
+
 galleryImages.forEach((image) => {
   const imageContainer = document.createElement("div");
   imageContainer.className = "image-container";
@@ -18,6 +21,7 @@ galleryImages.forEach((image) => {
   imageElem.classList.add("loading");
 });
 document.addEventListener("DOMContentLoaded", () => {
+  footer.classList.add("loading");
   const images = galleryGrid.querySelectorAll(".images.loading");
 
   if (images.length > 0) {
@@ -25,7 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
       images.forEach((image) => {
         image.classList.remove("loading");
       });
-    }, 1000);
+      footer.classList.remove("loading");
+    }, 1200);
   }
 });
 
@@ -59,8 +64,6 @@ tabsContainer.addEventListener("click", (e) => {
 });
 
 //full scroll back to top logic with throttling 🔥
-const footer = document.querySelector(".footer");
-const scrollBtn = footer.querySelector(".scroll-back-to-top");
 let lastScrollTime = 0;
 
 window.addEventListener("scroll", () => {
